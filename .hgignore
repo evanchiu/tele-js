@@ -1,0 +1,12 @@
+syntax: glob
+
+# specific files
+.DS_Store
+Thumbs.db
+
+# file types
+*.orig
+*~
+
+# directories
+.AppleDouble
