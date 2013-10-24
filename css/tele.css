@@ -1,0 +1,47 @@
+/* tele.css */
+@font-face
+{
+    font-family: aliquam;
+    src: url('../fonts/Aliquam.ttf')
+}
+
+h1, h2 {
+	font-family: aliquam;
+}
+.show-box {
+	background-image: linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+	background-image: -o-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+	background-image: -moz-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+	background-image: -webkit-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+	background-image: -ms-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		right top,
+		color-stop(0.2, #0063BA),
+		color-stop(0.79, #61B5FF)
+	);
+	color: white;
+}
+
+.jumbotron {
+	background-image: linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+	background-image: -o-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+	background-image: -moz-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+	background-image: -webkit-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+	background-image: -ms-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		right top,
+		color-stop(0.2, #0063BA),
+		color-stop(0.79, #61B5FF)
+	);
+	color:  white;
+}
+
+hr {
+	clear: both;
+}
