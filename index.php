@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Evan Chiu">
-    <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="shortcut icon" href="images/tele.png">
+    <link rel="apple-touch-icon" href="images/tele.png">
 
     <title>Tele</title>
 
@@ -25,31 +26,6 @@
     </div>
 
     <div class="container" id="show-container">
-
-      <div class="col-lg-4 col-sm-6 show-box">
-        <h2>Alpha</h2>
-        <p>Date</p>
-      </div>
-      <div class="col-lg-4 col-sm-6 show-box">
-        <h2>Bravo</h2>
-        <p>Date</p>
-      </div>
-      <div class="col-lg-4 col-sm-6 show-box">
-        <h2>Charlie</h2>
-        <p>Date</p>
-      </div>
-      <div class="col-lg-4 col-sm-6 show-box">
-        <h2>Delta</h2>
-        <p>Date</p>
-      </div>
-      <div class="col-lg-4 col-sm-6 show-box">
-        <h2>Echo</h2>
-        <p>Date</p>
-      </div>
-      <div class="col-lg-4 col-sm-6 show-box">
-        <h2>Foxtrot</h2>
-        <p>Date</p>
-      </div>
 
       <hr />
 
