@@ -6,7 +6,7 @@
 date_default_timezone_set('America/New_York');
 
 // Use curl to get listings from tele
-$ch = curl_init("http://10.0.0.103:1077");
+$ch = curl_init("http://10.0.0.11:1077");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $data = curl_exec($ch);
 
