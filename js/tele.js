@@ -9,22 +9,27 @@ $(document).ready(function() {
 function onShows(data) {
   var json = JSON.parse(data);
   var shows = json.shows;
+  var keys = Object.keys(shows).sort();
 
-  shows.sort(function(a, b){return b.timestamp - a.timestamp;});
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
 
-  for (var i = 0; i < shows.length; i++) {
     var div = $(document.createElement('div'));
     div.addClass('col-lg-4');
     div.addClass('col-sm-6');
     div.addClass('show-box');
 
     var title = $(document.createElement('h2'));
-    title.text(shows[i].title);
+    title.text(key);
     div.append(title);
 
-    var date = $(document.createElement('p'));
-    date.text(shows[i].date);
-    div.append(date);
+    var dates = shows[key];
+    dates.sort(function(a,b){ return a.timestamp - b.timestamp; });
+    for (var j = 0; j < dates.length; j++) {
+      var date = $(document.createElement('p'));
+      date.text(dates[j].date);
+      div.append(date);
+    }
 
     $('#show-container').prepend(div);
   }
