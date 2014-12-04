@@ -18,7 +18,7 @@ try {
     foreach ($links as $link) {
         if (endsWith($link, 'wtv')) {
             // parse out show title and date
-            preg_match('/\/(.*)_(\w+)_(\d+)_(\d+)_(\d+)_(\d+)_(\d+)_(\d+).wtv/', $link, $matches);
+            preg_match('/\/(.*)_(\w+)_(\d+)_(\d+)_(\d+)_(\d+)_(\d+)_(\d+).*?wtv/', $link, $matches);
             $date = new DateTime($matches[3] . '-' . $matches[4] . '-' . $matches[5]
                 . ' ' . $matches[6] . ':' . $matches[7] . ':' . $matches[8]);
             $title = $matches[1];
