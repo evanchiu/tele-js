@@ -25,12 +25,13 @@
       </div>
     </div>
 
-    <div class="container" id="show-container">
+    <div class="container">
+      <div id="show-container"></div>
 
       <hr />
 
       <footer>
-        <p>&copy;2013 <a href = "http://evanchiu.com">Evan Chiu</a></p>
+        <p>&copy;2015 <a href = "http://evanchiu.com">Evan Chiu</a></p>
       </footer>
     </div> <!-- /container -->
 

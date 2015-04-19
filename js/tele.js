@@ -13,25 +13,29 @@ function onShows(data) {
 
   for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
+    var dates = shows[key];
 
     var div = $(document.createElement('div'));
     div.addClass('col-lg-4');
     div.addClass('col-sm-6');
+    div.addClass('col-xs-12');
     div.addClass('show-box');
 
-    var title = $(document.createElement('h2'));
-    title.text(key);
+    var title = $(document.createElement('h3'));
+    title.text(key + ' (' + dates.length + ')');
+    title.addClass('active');
     div.append(title);
 
-    var dates = shows[key];
-    dates.sort(function(a,b){ return a.timestamp - b.timestamp; });
-    for (var j = 0; j < dates.length; j++) {
-      var date = $(document.createElement('p'));
-      date.text(dates[j].date);
-      div.append(date);
+    dates.sort(function(a, b){ return a.timestamp - b.timestamp; });
+    var date = $(document.createElement('p'));
+    if (dates.length == 1) {
+      date.text(dates[0].date);
+    } else {
+      date.text(dates[0].date + ' - ' + dates[dates.length-1].date);
     }
+    div.append(date);
 
-    $('#show-container').prepend(div);
+    $('#show-container').append(div);
   }
 }
 

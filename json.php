@@ -25,13 +25,13 @@ try {
             if (!array_key_exists($title, $shows)) {
                 // Add show to array
                 $shows[$title] = array(array(
-                    'date' => $date->format('l, M j'),
+                    'date' => $date->format('D, M j, Y'),
                     'timestamp' => $date->getTimeStamp()
                 ));
             } else {
                 // Add this date instance
                 $shows[$title][] = array(
-                    'date' => $date->format('l, M j'),
+                    'date' => $date->format('D, M j, Y'),
                     'timestamp' => $date->getTimeStamp()
                 );
             }
