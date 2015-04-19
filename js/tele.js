@@ -14,6 +14,7 @@ function onShows(data) {
   for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
     var dates = shows[key];
+    dates.sort(function(a, b){ return a.timestamp - b.timestamp; });
 
     var div = $(document.createElement('div'));
     div.addClass('col-lg-4');
@@ -22,18 +23,18 @@ function onShows(data) {
     div.addClass('show-box');
 
     var title = $(document.createElement('h3'));
-    title.text(key + ' (' + dates.length + ')');
-    title.addClass('active');
     div.append(title);
 
-    dates.sort(function(a, b){ return a.timestamp - b.timestamp; });
     var date = $(document.createElement('p'));
+    div.append(date);
+
     if (dates.length == 1) {
+      title.text(key);
       date.text(dates[0].date);
     } else {
+      title.text(key + ' (' + dates.length + ')');
       date.text(dates[0].date + ' - ' + dates[dates.length-1].date);
     }
-    div.append(date);
 
     $('#show-container').append(div);
   }
