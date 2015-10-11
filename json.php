@@ -21,7 +21,7 @@ try {
             preg_match('/\/(.*)_(\w+)_(\d+)_(\d+)_(\d+)_(\d+)_(\d+)_(\d+).*?wtv/', $link, $matches);
             $date = new DateTime($matches[3] . '-' . $matches[4] . '-' . $matches[5]
                 . ' ' . $matches[6] . ':' . $matches[7] . ':' . $matches[8]);
-            $title = $matches[1];
+            $title = str_replace('%20', ' ', $matches[1]);
             if (!array_key_exists($title, $shows)) {
                 // Add show to array
                 $shows[$title] = array(array(
