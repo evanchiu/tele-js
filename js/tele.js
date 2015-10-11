@@ -1,5 +1,18 @@
 // tele.js
 
+// List of Evan's Shows
+var evanShows = [
+  'Fresh Off the Boat',
+  'Grandfathered',
+  'Heroes Reborn',
+  'Limitless',
+  'Marvel\'s Agents of S.H.I.E.L.D.',
+  'Minority Report',
+  'Once Upon a Time',
+  'Scorpion',
+  'The Grinder'
+];
+
 // On ready, make an AJAX request for the show data
 $(document).ready(function() {
   $.get('json.php', onShows);
@@ -20,7 +33,11 @@ function onShows(data) {
     div.addClass('col-lg-4');
     div.addClass('col-sm-6');
     div.addClass('col-xs-12');
-    div.addClass('show-box');
+    if (evanShows.indexOf(key) != -1) {
+      div.addClass('evan-show-box');
+    } else {
+      div.addClass('show-box');
+    }
 
     var title = $(document.createElement('h3'));
     div.append(title);

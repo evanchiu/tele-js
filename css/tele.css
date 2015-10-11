@@ -6,42 +6,57 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: aliquam;
+    font-family: aliquam;
 }
+
 .show-box {
-	background-image: linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
-	background-image: -o-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
-	background-image: -moz-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
-	background-image: -webkit-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
-	background-image: -ms-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
-	
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		right top,
-		color-stop(0.2, #0063BA),
-		color-stop(0.79, #61B5FF)
-	);
-	color: white;
+    background: rgba(219,4,162,1);
+    background: -moz-linear-gradient(45deg, rgba(219,4,162,1) 0%, rgba(252,131,214,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(219,4,162,1)), color-stop(100%, rgba(252,131,214,1)));
+    background: -webkit-linear-gradient(45deg, rgba(219,4,162,1) 0%, rgba(252,131,214,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(219,4,162,1) 0%, rgba(252,131,214,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(219,4,162,1) 0%, rgba(252,131,214,1) 100%);
+    background: linear-gradient(45deg, rgba(219,4,162,1) 0%, rgba(252,131,214,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#db04a2', endColorstr='#fc83d6', GradientType=1 );
+
+    color: white;
+}
+
+.evan-show-box {
+    background-image: linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+    background-image: -o-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+    background-image: -moz-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+    background-image: -webkit-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+    background-image: -ms-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        right top,
+        color-stop(0.2, #0063BA),
+        color-stop(0.79, #61B5FF)
+    );
+
+    color: white;
 }
 
 .jumbotron {
-	background-image: linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
-	background-image: -o-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
-	background-image: -moz-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
-	background-image: -webkit-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
-	background-image: -ms-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
-	
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		right top,
-		color-stop(0.2, #0063BA),
-		color-stop(0.79, #61B5FF)
-	);
-	color:  white;
+    background-image: linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+    background-image: -o-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+    background-image: -moz-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+    background-image: -webkit-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+    background-image: -ms-linear-gradient(left bottom, #0063BA 20%, #61B5FF 79%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        right top,
+        color-stop(0.2, #0063BA),
+        color-stop(0.79, #61B5FF)
+    );
+    color:  white;
 }
 
 hr {
-	clear: both;
+    clear: both;
 }
