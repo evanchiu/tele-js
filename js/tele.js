@@ -1,18 +1,36 @@
 // tele.js
+//
 
-// List of Evan's Shows
-var evanShows = [
-  'Brooklyn Nine-Nine',
-  'Fresh Off the Boat',
-  'Grandfathered',
-  'Heroes Reborn',
-  'Limitless',
-  'Marvel\'s Agents of S.H.I.E.L.D.',
-  'Minority Report',
-  'Once Upon a Time',
-  'Scorpion',
-  'The Grinder'
-];
+// Configuration
+// classes for shows allow different shows to have different CSS classes
+var showClass = {
+  'evan-show-box': [
+    'Brooklyn Nine-Nine',
+    'Fresh Off the Boat',
+    'Grandfathered',
+    'Heroes Reborn',
+    'Limitless',
+    'Marvel\'s Agents of S.H.I.E.L.D.',
+    'Minority Report',
+    'Once Upon a Time',
+    'Scorpion',
+    'The Grinder'
+  ],
+  'shaina-show-box': [
+    'Blacklist',
+    'Blood & Oil',
+    'Chicago',
+    'Chicago PD',
+    'Chicago Med',
+    'How to Get Away with Murder',
+    'Grey\'s Anatomy',
+    'Madam Secretary',
+    'Quantico',
+    'Scandal',
+    'The Good Wife'
+  ]
+}
+var defaultShowClass = 'jessi-show-box';
 
 // On ready, make an AJAX request for the show data
 $(document).ready(function() {
@@ -34,10 +52,17 @@ function onShows(data) {
     div.addClass('col-lg-4');
     div.addClass('col-sm-6');
     div.addClass('col-xs-12');
-    if (evanShows.indexOf(key) != -1) {
-      div.addClass('evan-show-box');
-    } else {
-      div.addClass('show-box');
+    div.addClass('show-box');
+    var showClassKeys = Object.keys(showClass);
+    var found = false;
+    for (var j = 0; j < showClassKeys.length; j++) {
+      if (showClass[showClassKeys[j]].indexOf(key) != -1) {
+        div.addClass(showClassKeys[j]);
+        found = true;
+      }
+    }
+    if (!found) {
+      div.addClass(defaultShowClass);
     }
 
     var title = $(document.createElement('h3'));
