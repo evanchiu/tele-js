@@ -2,6 +2,7 @@
 
 // List of Evan's Shows
 var evanShows = [
+  'Brooklyn Nine-Nine',
   'Fresh Off the Boat',
   'Grandfathered',
   'Heroes Reborn',
