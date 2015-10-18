@@ -17,7 +17,6 @@ var showClass = {
     'The Grinder'
   ],
   'shaina-show-box': [
-    'Blacklist',
     'Blood & Oil',
     'Chicago',
     'Chicago PD',
@@ -27,6 +26,7 @@ var showClass = {
     'Madam Secretary',
     'Quantico',
     'Scandal',
+    'The Blacklist',
     'The Good Wife'
   ]
 }
