@@ -21,7 +21,7 @@ var showClass = {
     'Chicago',
     'Chicago PD',
     'Chicago Med',
-    'How to Get Away with Murder',
+    'How to Get Away With Murder',
     'Grey\'s Anatomy',
     'Madam Secretary',
     'Quantico',
