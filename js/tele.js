@@ -14,12 +14,14 @@ var showClass = {
     'Minority Report',
     'Once Upon a Time',
     'Scorpion',
+    'Supergirl',
     'The Grinder'
   ],
   'shaina-show-box': [
     'Blood & Oil',
     'Chicago',
-    'Chicago PD',
+    'Chicago Fire',
+    'Chicago P.D.',
     'Chicago Med',
     'How to Get Away With Murder',
     'Grey\'s Anatomy',
