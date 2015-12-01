@@ -13,29 +13,47 @@ try {
     $ch = curl_init("http://10.0.0.11:1077");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $data = curl_exec($ch);
+    $lines = explode("\n", $data);
+    $show = array();
+    $prevTitle = '';
 
-    $links = getLinks($data);
-    foreach ($links as $link) {
-        if (endsWith($link, 'wtv')) {
-            // parse out show title and date
-            preg_match('/\/(.*)_(\w+)_(\d+)_(\d+)_(\d+)_(\d+)_(\d+)_(\d+).*?wtv/', $link, $matches);
-            $date = new DateTime($matches[3] . '-' . $matches[4] . '-' . $matches[5]
-                . ' ' . $matches[6] . ':' . $matches[7] . ':' . $matches[8]);
-            $title = str_replace('%20', ' ', $matches[1]);
-            if (!array_key_exists($title, $shows)) {
-                // Add show to array
-                $shows[$title] = array(array(
-                    'date' => $date->format('D, M j, Y'),
-                    'timestamp' => $date->getTimeStamp()
-                ));
-            } else {
-                // Add this date instance
-                $shows[$title][] = array(
-                    'date' => $date->format('D, M j, Y'),
-                    'timestamp' => $date->getTimeStamp()
-                );
+    foreach ($lines as $line) {
+        // Parse relevant details from line
+        preg_match('/\"\>\<code\>([0-9\.]+)(B|K|M|G|T)\<\/code\>.*\>(.*)_.*_(\d+)_(\d+)_(\d+)_(\d+)_(\d+)_(\d+).*?wtv/', $line, $matches);
+        if ($matches) {
+            // Parse details
+            $size = bytes($matches[1], $matches[2]);
+            $title = $matches[3];
+            $date = new DateTime(
+                $matches[4] . '-' .
+                $matches[5] . '-' .
+                $matches[6] . ' ' .
+                $matches[7] . ':' .
+                $matches[8] . ':' .
+                $matches[9]);
+
+            // Check if it's a new show
+            if ($title != $prevTitle) {
+                if ($prevTitle != '') {
+                    $shows[] = $show;
+                }
+                $show = array('title' => $title,
+                    'episodes' => array());
+                $prevTitle = $title;
             }
+
+            // Add this episode
+            $show['episodes'][] = array(
+                'date' => $date->format('D, M j, Y'),
+                'timestamp' => $date->getTimeStamp(),
+                'size' => $size
+            );
         }
+    }
+
+    // Add in last show
+    if ($prevTitle != '') {
+        $shows[] = $show;
     }
 } catch (Exception $e) {
     $json['error'] = $e->getMessage();
@@ -44,25 +62,6 @@ try {
 $json['shows'] = $shows;
 print json_encode($json);
 
-# Source from Stack Overflow:
-# http://stackoverflow.com/questions/834303/php-startswith-and-endswith-functions
-function endsWith($haystack, $needle)
-{
-    return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
-}
-
-# Source from Stack Overflow:
-# http://stackoverflow.com/questions/1519696/preg-match-all-a-href/1519780#1519780
-function getLinks($html) {
-    $doc = new DOMDocument();
-    $doc->loadHTML($html);
-    $xpath = new DOMXPath($doc);
-    $nodeList = $xpath->query('//a/@href');
-    $links = array();
-    for ($i = 0; $i < $nodeList->length; $i++) {
-        # Xpath query for attributes gives a NodeList containing DOMAttr objects.
-        # http://php.net/manual/en/class.domattr.php
-        $links[] = $nodeList->item($i)->value;
-    }
-    return $links;
+function bytes($size, $unit) {
+    return $size * 1 << (strpos('BKMGT', $unit) * 10);
 }

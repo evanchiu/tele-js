@@ -26,6 +26,18 @@
     </div>
 
     <div class="container">
+      <div id="loading"
+        class="alert alert-info"
+        role="alert"
+        style="display:none">loading...</div>
+
+      <div id="error"
+        class="alert alert-danger"
+        role="alert"
+        style="display:none"></div>
+
+      <div id="disk-usage-bar" class="progress" style="display:none"></div>
+
       <div id="show-container"></div>
 
       <hr />
