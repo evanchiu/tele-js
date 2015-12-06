@@ -40,7 +40,7 @@
       <hr />
 
       <footer>
-        <p>&copy;2015 <a href = "http://evanchiu.com">Evan Chiu</a></p>
+        <p>&copy;2015 <a href = "http://evanchiu.com">Evan Chiu</a> | Fork me on <a href = "https://github.com/evanchiu/tele">Github</a></p>
       </footer>
     </div> <!-- /container -->
 
