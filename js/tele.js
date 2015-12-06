@@ -7,7 +7,6 @@ var showClass = {
     'Brooklyn Nine-Nine',
     'Fresh Off the Boat',
     'Grandfathered',
-    'Heroes Reborn',
     'Limitless',
     'Marvel\'s Agents of S.H.I.E.L.D.',
     'Minority Report',
