@@ -57,3 +57,5 @@ I run into a lot of trouble setting it up because I like to run it as a headless
   * Set up port forwarding for the port serving an empty directory
 * In [UptimeRobot](https://uptimerobot.com/)
   * Monitor that port
+
+&copy; 2015 Evan Chiu. Licensed under the [MIT License](LICENSE)
