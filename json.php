@@ -19,7 +19,7 @@ try {
 
     foreach ($lines as $line) {
         // Parse relevant details from line
-        preg_match('/\"\>\<code\>([0-9\.]+)(B|K|M|G|T)\<\/code\>.*\>(.*)_.*_(\d+)_(\d+)_(\d+)_(\d+)_(\d+)_(\d+).*?wtv/', $line, $matches);
+        preg_match('/\"\>\<code\>([0-9\.]+)(B|k|M|G|T)\<\/code\>.*\>(.*)_.*_(\d+)_(\d+)_(\d+)_(\d+)_(\d+)_(\d+).*?wtv/', $line, $matches);
         if ($matches) {
             // Parse details
             $size = bytes($matches[1], $matches[2]);
@@ -63,5 +63,5 @@ $json['shows'] = $shows;
 print json_encode($json);
 
 function bytes($size, $unit) {
-    return $size * 1 << (strpos('BKMGT', $unit) * 10);
+    return $size * 1 << (strpos('BkMGT', $unit) * 10);
 }
