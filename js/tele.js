@@ -2,37 +2,10 @@
 
 // Configuration
 // classes for shows allow different shows to have different CSS classes
-var showClass = {
-  'evan-show-box': [
-    'Brooklyn Nine-Nine',
-    'Fresh Off the Boat',
-    'Grandfathered',
-    'Limitless',
-    'Marvel\'s Agents of S.H.I.E.L.D.',
-    'Minority Report',
-    'Once Upon a Time',
-    'Scorpion',
-    'Supergirl',
-    'The Grinder'
-  ],
-  'shaina-show-box': [
-    'Blood & Oil',
-    'Chicago',
-    'Chicago Fire',
-    'Chicago P.D.',
-    'Chicago Med',
-    'How to Get Away With Murder',
-    'Grey\'s Anatomy',
-    'Madam Secretary',
-    'Quantico',
-    'Scandal',
-    'The Blacklist',
-    'The Good Wife'
-  ]
-}
-var defaultShowClass = 'jessi-show-box';
-var totalBytes = 1000000000000;
-var osBytes = 30000000000;
+var showColorSuffix = '-show-box';
+var defaultShowClass = client_config['default-show-color'] + showColorSuffix;
+var totalBytes = client_config['total-bytes'];
+var osBytes = client_config['os-bytes'];
 var usage = {};
 
 // On ready, make an AJAX request for the show data
@@ -77,17 +50,12 @@ function onShows(data) {
     div.addClass('col-xs-12');
     div.addClass('show-box');
 
-    // Determine and add class
-    var showClassKeys = Object.keys(showClass);
-    var found = false;
-    for (var j = 0; j < showClassKeys.length; j++) {
-      if (showClass[showClassKeys[j]].indexOf(title) != -1) {
-        div.addClass(showClassKeys[j]);
-        addUsage(showClassKeys[j], sizeBytes);
-        found = true;
-      }
-    }
-    if (!found) {
+    // Determine and add class, tally usage
+    if (client_config['show-colors'].hasOwnProperty(title)) {
+      var showClass = client_config['show-colors'][title] + showColorSuffix;
+      div.addClass(showClass);
+      addUsage(showClass, sizeBytes);
+    } else {
       div.addClass(defaultShowClass);
       addUsage(defaultShowClass, sizeBytes);
     }

@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
-.evan-show-box {
+.blue-show-box {
     background: #007ccf;
     background: -moz-linear-gradient(45deg, #007ccf 0%, #007ccf 20%, #82cafa 100%);
     background: -webkit-gradient(left bottom, right top, color-stop(0%, #007ccf), color-stop(20%, #007ccf), color-stop(100%, #82cafa));
@@ -24,7 +24,18 @@ h1, h2, h3, h4, h5, h6 {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007ccf', endColorstr='#82cafa', GradientType=1);
 }
 
-.jessi-show-box {
+.green-show-box {
+    background: #08a12c;
+    background: -moz-linear-gradient(45deg, #08a12c 0%, #85ff7a 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, #08a12c), color-stop(100%, #85ff7a));
+    background: -webkit-linear-gradient(45deg, #08a12c 0%, #85ff7a 100%);
+    background: -o-linear-gradient(45deg, #08a12c 0%, #85ff7a 100%);
+    background: -ms-linear-gradient(45deg, #08a12c 0%, #85ff7a 100%);
+    background: linear-gradient(45deg, #08a12c 0%, #85ff7a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#08a12c', endColorstr='#85ff7a', GradientType=1 );
+}
+
+.pink-show-box {
     background: #cf007c;
     background: -moz-linear-gradient(45deg, #cf007c 0%, #cf007c 20%, #fa82ca 100%);
     background: -webkit-gradient(left bottom, right top, color-stop(0%, #cf007c), color-stop(20%, #cf007c), color-stop(100%, #fa82ca));
@@ -35,7 +46,18 @@ h1, h2, h3, h4, h5, h6 {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cf007c', endColorstr='#fa82ca', GradientType=1);
 }
 
-.shaina-show-box {
+.red-show-box {
+    background: #e81717;
+    background: -moz-linear-gradient(45deg, #e81717 0%, #ff7878 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, #e81717), color-stop(100%, #ff7878));
+    background: -webkit-linear-gradient(45deg, #e81717 0%, #ff7878 100%);
+    background: -o-linear-gradient(45deg, #e81717 0%, #ff7878 100%);
+    background: -ms-linear-gradient(45deg, #e81717 0%, #ff7878 100%);
+    background: linear-gradient(45deg, #e81717 0%, #ff7878 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e81717', endColorstr='#ff7878', GradientType=1 );
+}
+
+.violet-show-box {
     background: #6100cf;
     background: -moz-linear-gradient(45deg, #6100cf 0%, #6100cf 20%, #ba82fa 100%);
     background: -webkit-gradient(left bottom, right top, color-stop(0%, #6100cf), color-stop(20%, #6100cf), color-stop(100%, #ba82fa));

@@ -2,15 +2,16 @@
 // json.php
 // Reads the show data and parses it, then provides it as json
 
-// Set timezone
-date_default_timezone_set('America/New_York');
+include('config.php');
 
 // Use curl to get listings from tele
 $shows = array();
 $json = array();
 
 try {
-    $ch = curl_init("http://10.0.0.11:1077");
+    $ch = curl_init("http://" .
+        $server_config['tele-ip'] . ':' .
+        $server_config['tele-port']);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $data = curl_exec($ch);
     $lines = explode("\n", $data);

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include('config.php'); ?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -7,21 +8,17 @@
     <link rel="shortcut icon" href="images/tele.png">
     <link rel="apple-touch-icon" href="images/tele.png">
 
-    <title>Tele</title>
+    <title><?php print $server_config['title']; ?></title>
 
-    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles -->
     <link href="css/tele.css" rel="stylesheet">
   </head>
 
   <body>
-    <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Tele</h1>
-        <p>These television recordings are available</p>
+        <h1><?php print $server_config['title']; ?></h1>
+        <p><?php print $server_config['tagline']; ?></p>
       </div>
     </div>
 
@@ -47,10 +44,10 @@
       </footer>
     </div> <!-- /container -->
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- JavaScript -->
+    <script>
+      var client_config = <?php print json_encode($client_config); ?>;
+    </script>
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/tele.js"></script>
