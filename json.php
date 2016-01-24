@@ -64,5 +64,5 @@ $json['shows'] = $shows;
 print json_encode($json);
 
 function bytes($size, $unit) {
-    return $size * 1 << (strpos('BkMGT', $unit) * 10);
+    return intval($size * (1 << (strpos('BkMGT', $unit) * 10)));
 }
