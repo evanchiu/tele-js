@@ -14,7 +14,7 @@ $(document).ready(function() {
     .fail(function() {
       $('#loading').hide();
       $('#error').show()
-        .text('Error loading shows');
+        .html('Error loading shows');
     }
   );
   $('#loading').show();
@@ -29,7 +29,7 @@ function onShows(data) {
 
   if (!json.shows || json.error) {
     $('#error').show()
-      .text('Error loading shows: ' + json.error);
+      .html('Error loading shows: ' + json.error);
   }
 
   for (var i = 0; i < shows.length; i++) {
@@ -67,13 +67,13 @@ function onShows(data) {
     div.append(dateEl);
 
     if (episodes.length == 1) {
-      titleEl.text(title);
-      dateEl.text(episodes[0].date +
+      titleEl.html(title);
+      dateEl.html(episodes[0].date +
         ' (' + sizeToString(sizeBytes) + ', ' +
         Math.round(sizeBytes*100/totalBytes) + '%)');
     } else {
-      titleEl.text(title + ' (' + episodes.length + ')');
-      dateEl.text(episodes[0].date + ' - ' + episodes[episodes.length-1].date +
+      titleEl.html(title + ' (' + episodes.length + ')');
+      dateEl.html(episodes[0].date + ' - ' + episodes[episodes.length-1].date +
         ' (' + sizeToString(sizeBytes) + ', ' +
         Math.round(sizeBytes*100/totalBytes) + '%)');
     }
@@ -91,7 +91,7 @@ function onShows(data) {
   osEl.addClass('progress-bar-striped');
   osEl.css('width', Math.round(osBytes*100/totalBytes) + '%');
   var osSpan = $(document.createElement('span'));
-  osSpan.text(Math.round(osBytes*100/totalBytes) + '%');
+  osSpan.html(Math.round(osBytes*100/totalBytes) + '%');
   osEl.append(osSpan);
   dubEl.append(osEl);
 
@@ -103,7 +103,7 @@ function onShows(data) {
     viewerEl.addClass(key);
     viewerEl.css('width', Math.round(usage[key]*100/totalBytes) + '%');
     var viewerSpan = $(document.createElement('span'));
-    viewerSpan.text(Math.round(usage[key]*100/totalBytes) + '%');
+    viewerSpan.html(Math.round(usage[key]*100/totalBytes) + '%');
     viewerEl.append(viewerSpan);
     dubEl.append(viewerEl);
   }
