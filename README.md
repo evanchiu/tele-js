@@ -26,7 +26,12 @@ I run into a lot of trouble setting it up because I like to run it as a headless
 
 ### Windows Setup
 * Create a Windows 7 x64 VM
+  * My host has 8gb RAM, so I'm comfortable giving the VM 4gb
+  * Give it 256mb of video memory, and enable 2d and 3d acceleration
+  * Set the network to bridged
 * Get it fully updated (currently about 5-10 reboots and more updates)
+* Install [Virtual Box Guest Additions](https://docs.oracle.com/cd/E36500_01/E36502/html/qs-guest-additions.html)
+  * Take the advanced WMMD drivers
 * Download [HDHomeRun Software](http://my.hdhomerun.com/instructions/)
   * Install it and run it to find the tuners on your network and configure Windows to recognize them
   * Make sure Windows is treating this as a Home network
@@ -40,15 +45,22 @@ I run into a lot of trouble setting it up because I like to run it as a headless
   * Make an empty directory named `empty` in your home directory for monitoring without exposing your files
   * Go to Task Scheduler and set up two tasks
     * Show Listings
+      * Run program whether user is logged on or not
       * Trigger: At startup
       * Run a program: `http-server`
       * Arguments: `"C:\Users\Public\Recorded TV" -p 1077`
       * Uncheck configuration to kill it after 3 days
     * Monitor Listing
+      * Run program whether user is logged on or not
       * Trigger: At startup
       * Run a program: `http-server`
       * Arguments: `"C:\Users\Users\evan\empty" -p 10077`
       * Uncheck configuration to kill it after 3 days
+* Configure Windows Firewall
+  * Search start menu for "Allow a program through Windows Firewall"
+    * Change Settings
+    * Allow another program...
+    * Node.js
 
 ### Monitoring Setup
 * I set up monitoring, so I know when this thing goes down
