@@ -5,7 +5,10 @@ A simple web app for displaying recorded television shows.
 ![Tele Screenshot](sample.png)
 
 ## Web app setup
-* TODO
+* Clone repository
+* Modify [serverConfig.js](serverConfig.js) and [ClientConfig.js](src/ClientConfig.js) for your setup
+* `npm install` and `npm run build` to build the static files
+* `./server.js` to get running
 
 ## My Setup
 Tele is also is my name for a Windows VM set up to:
