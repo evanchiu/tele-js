@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ShowList from './ShowList';
+import Notice from './Notice';
 import 'whatwg-fetch';
 import './App.css';
 
@@ -7,18 +8,24 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {shows: []};
+    this.state = {
+      info: '',
+      error: '',
+      shows: []
+    };
   }
 
   componentDidMount() {
     var self = this;
+    this.setState({info: 'loading...'});
     fetch('/shows.json')
       .then(function(response) {
+        self.setState({info: ''});
         return response.json();
       }).then(function(json) {
         self.setState({shows: json});
       }).catch(function(ex) {
-        console.log('parsing failed', ex);
+        self.setState({error: 'Error retrieving show data: ' + ex});
       });
   }
 
@@ -29,6 +36,9 @@ class App extends Component {
           <h1>{ this.props.config.title }</h1>
           <p>{ this.props.config.tagline }</p>
         </div>
+
+        { this.state.info && <Notice type="info" message={this.state.info} /> }
+        { this.state.error && <Notice type="danger" message={this.state.error} /> }
 
         <ShowList
           shows={this.state.shows}
