@@ -55,9 +55,7 @@ class App extends Component {
           totalBytes={this.props.config.totalBytes}
         />
 
-        <hr />
-
-        <footer>
+        <footer clear="both">
           <p>&copy;2016 <a href="http://evanchiu.com">Evan Chiu</a> | Fork me on <a href="https://github.com/evanchiu/tele-js">Github</a></p>
         </footer>
       </div>

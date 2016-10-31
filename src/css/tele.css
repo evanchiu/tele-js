@@ -1,4 +1,9 @@
 /* tele.css */
+body {
+    background: #333;
+    color: #eee;
+}
+
 @font-face
 {
     font-family: aliquam;
@@ -7,10 +12,6 @@
 
 h1, h2, h3, h4, h5, h6 {
     font-family: aliquam;
-}
-
-.show-box {
-    color: white;
 }
 
 .blue-show-box {
@@ -82,9 +83,9 @@ h1, h2, h3, h4, h5, h6 {
         color-stop(0.2, #0063BA),
         color-stop(0.79, #61B5FF)
     );
-    color:  white;
 }
 
-hr {
+footer {
     clear: both;
+    padding: 5px;
 }
