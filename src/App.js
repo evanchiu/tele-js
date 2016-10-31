@@ -3,7 +3,6 @@ import ShowList from './ShowList';
 import Notice from './Notice';
 import UsageBar from './UsageBar';
 import 'whatwg-fetch';
-import './App.css';
 
 class App extends Component {
 
