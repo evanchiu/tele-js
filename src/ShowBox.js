@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+var dateFormat = require('dateformat');
 
 class ShowBox extends Component {
   render() {
@@ -12,16 +13,18 @@ class ShowBox extends Component {
       sizeBytes += episodes[j].size;
     }
 
+    const format = 'ddd, mmm d';
     // Format is slightly different for one episode vs many
     if (episodes.length === 1) {
       titleLine = this.props.title;
-      dateLine = episodes[0].date
+      dateLine = dateFormat(episodes[0].date, format)
         + ' (' + this.sizeToString(sizeBytes) + ', '
         + Math.round(sizeBytes*100/this.props.totalBytes) + '%)';
     } else {
+      episodes.sort(function(a, b){ return a.timestamp - b.timestamp; });
       titleLine = this.props.title + ' (' + episodes.length + ')';
-      dateLine = episodes[0].date
-        + ' - ' + episodes[episodes.length-1].date
+      dateLine = dateFormat(episodes[0].date, format)
+        + ' - ' + dateFormat(episodes[episodes.length-1].date, format)
         + ' (' + this.sizeToString(sizeBytes) + ', '
         + Math.round(sizeBytes*100/this.props.totalBytes) + '%)';
     }
