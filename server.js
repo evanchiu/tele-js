@@ -9,7 +9,7 @@ var Entities = require('html-entities').XmlEntities;
 var entities = new Entities();
 
 // Configuration
-var port = 1337;
+var port = 3001;
 
 // Start application
 var app = http.createServer(handler);
