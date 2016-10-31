@@ -6,7 +6,7 @@ A simple web app for displaying recorded television shows.
 
 ## Web app setup
 * Clone repository
-* Modify [serverConfig.js](serverConfig.js) and [ClientConfig.js](src/ClientConfig.js) for your setup
+* Modify [ServerConfig.js](ServerConfig.js) and [ClientConfig.js](src/ClientConfig.js) for your setup
 * Make sure the directory in [tele-server.service](tele-server.service) on the `WorkingDirectory` line matches the directory where these files are checked out.
 * Run these commands to complete the installation and run the service
 
