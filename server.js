@@ -5,6 +5,8 @@ var http = require('http'),
   static = require('node-static'),
   util = require('./util');
 var serverConfig = require('./ServerConfig');
+var Entities = require('html-entities').XmlEntities;
+var entities = new Entities();
 
 // Configuration
 var port = 1337;
@@ -53,7 +55,7 @@ function getShows(req, res) {
             shows.push(show);
           }
           show = {
-            title: title,
+            title: entities.decode(title),
             episodes: []
           };
           prevTitle = title;
