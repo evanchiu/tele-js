@@ -6,7 +6,7 @@ const ClientConfig = {
   tagline: 'These television recordings are available',
 
   // Total bytes available
-  totalBytes: 50000000000,
+  totalBytes: 500000000000,
   // Bytes used by Operating System (Windows)
   osBytes: 30000000000,
 

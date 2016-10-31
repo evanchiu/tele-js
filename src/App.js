@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ShowList from './ShowList';
 import Notice from './Notice';
+import UsageBar from './UsageBar';
 import 'whatwg-fetch';
 import './App.css';
 
@@ -39,6 +40,14 @@ class App extends Component {
 
         { this.state.info && <Notice type="info" message={this.state.info} /> }
         { this.state.error && <Notice type="danger" message={this.state.error} /> }
+
+        <UsageBar
+          shows={this.state.shows}
+          showColors={this.props.config.showColors}
+          defaultColor={this.props.config.defaultShowColor}
+          osBytes={this.props.config.osBytes}
+          totalBytes={this.props.config.totalBytes}
+        />
 
         <ShowList
           shows={this.state.shows}
