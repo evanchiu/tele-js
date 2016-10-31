@@ -1,0 +1,54 @@
+// Client side configuration
+const ClientConfig = {
+  // Page title
+  title: 'Tele',
+  // Page tagline
+  tagline: 'These television recordings are available',
+
+  // Total bytes available
+  totalBytes: 50000000000,
+  // Bytes used by Operating System (Windows)
+  osBytes: 30000000000,
+
+  // Color choices are:
+  // blue, green, pink, red, and violet
+
+  // Set default color for shows not in the list below
+  defaultShowColor: 'pink',
+  // Define colors for each show in your list
+  showColors: {
+    'BattleBots'                          : 'blue',
+    'Blood & Oil'                         : 'violet',
+    'Brooklyn Nine-Nine'                  : 'blue',
+    'Bull'                                : 'violet',
+    'Chicago Fire'                        : 'violet',
+    'Chicago Med'                         : 'violet',
+    'Chicago P.D.'                        : 'pink',
+    'Chicago'                             : 'violet',
+    'Fresh Off the Boat'                  : 'blue',
+    'Galavant'                            : 'blue',
+    'Grandfathered'                       : 'blue',
+    'Grease- Live'                        : 'blue',
+    'Grey&#x27;s Anatomy'                 : 'violet',
+    'How to Get Away With Murder'         : 'violet',
+    'Jane the Virgin'                     : 'violet',
+    'Limitless'                           : 'blue',
+    'MacGyver'                            : 'blue',
+    'Madam Secretary'                     : 'violet',
+    'Marvel&#x27;s Agents of S.H.I.E.L.D.': 'blue',
+    'Marvel&#x27;s Agent Carter'          : 'blue',
+    'New Girl'                            : 'blue',
+    'Notorious'                           : 'violet',
+    'Once Upon a Time'                    : 'blue',
+    'Olympics 2016 Primetime'             : 'blue',
+    'Quantico'                            : 'violet',
+    'Scandal'                             : 'violet',
+    'Scorpion'                            : 'blue',
+    'The Good Wife'                       : 'violet',
+    'The Grinder'                         : 'blue',
+    'This is us'                          : 'violet',
+    'Timeless'                            : 'blue'
+  }
+};
+
+export default ClientConfig;

@@ -1,18 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import ShowList from './ShowList';
+import 'whatwg-fetch';
 import './App.css';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {shows: []};
+  }
+
+  componentDidMount() {
+    var self = this;
+    fetch('/shows.json')
+      .then(function(response) {
+        return response.json();
+      }).then(function(json) {
+        self.setState({shows: json});
+      }).catch(function(ex) {
+        console.log('parsing failed', ex);
+      });
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div className="container">
+        <div className="jumbotron">
+          <h1>{ this.props.config.title }</h1>
+          <p>{ this.props.config.tagline }</p>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <ShowList
+          shows={this.state.shows}
+          showColors={this.props.config.showColors}
+          defaultColor={this.props.config.defaultShowColor}
+          totalBytes={this.props.config.totalBytes}
+        />
+
+        <hr />
+
+        <footer>
+          <p>&copy;2016 <a href="http://evanchiu.com">Evan Chiu</a> | Fork me on <a href="https://github.com/evanchiu/tele-js">Github</a></p>
+        </footer>
       </div>
     );
   }

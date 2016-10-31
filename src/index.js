@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './index.css';
+import ClientConfig from './ClientConfig';
+import './css/bootstrap.css';
+import './css/tele.css';
 
 ReactDOM.render(
-  <App />,
+  <App config={ClientConfig} />,
   document.getElementById('root')
 );
