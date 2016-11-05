@@ -41,7 +41,7 @@ const ClientConfig = {
     'Notorious'                           : 'violet',
     'Once Upon a Time'                    : 'blue',
     'Olympics 2016 Primetime'             : 'blue',
-    'Quantico'                            : 'violet',
+    'Quantico'                            : 'blue',
     'Scandal'                             : 'violet',
     'Scorpion'                            : 'blue',
     'The Good Wife'                       : 'violet',
