@@ -8,7 +8,8 @@ const ClientConfig = {
   // Total bytes available
   totalBytes: 500000000000,
   // Bytes used by Operating System (Windows)
-  osBytes: 30000000000,
+  // 0 if the recordings are not on the OS drive
+  osBytes: 0,
 
   // Color choices are:
   // blue, green, pink, red, and violet
