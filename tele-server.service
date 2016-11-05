@@ -5,6 +5,7 @@ Description=A simple web app for displaying recorded television shows.
 Type=simple
 WorkingDirectory=/home/evan/node/tele-js
 ExecStart=/usr/bin/node server
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

@@ -11,9 +11,10 @@ A simple web app for displaying recorded television shows.
 * Run these commands to complete the installation and run the service
 
 
-    sudo cp tele-server.service /lib/systemd/system/
     npm install
     npm run build
+    sudo cp tele-server.service /lib/systemd/system/
+    sudo systemctl enable tele-server
     sudo systemctl start tele-server
 
 ## My Setup
