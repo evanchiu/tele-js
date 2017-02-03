@@ -35,20 +35,19 @@ const ClientConfig = {
     'Jane the Virgin'                     : 'violet',
     'Limitless'                           : 'blue',
     'MacGyver'                            : 'blue',
-    'Madam Secretary'                     : 'violet',
     'Marvel\'s Agents of S.H.I.E.L.D.'    : 'blue',
     'Marvel\'s Agent Carter'              : 'blue',
     'New Girl'                            : 'blue',
     'Notorious'                           : 'violet',
     'Once Upon a Time'                    : 'blue',
     'Olympics 2016 Primetime'             : 'blue',
+    'Powerless'                           : 'blue',
     'Quantico'                            : 'blue',
     'Scandal'                             : 'violet',
-    'Scorpion'                            : 'blue',
     'The Good Wife'                       : 'violet',
+    'The Great Indoors'                   : 'blue',
     'The Grinder'                         : 'blue',
     'This is us'                          : 'violet',
-    'Timeless'                            : 'blue'
   }
 };
 
