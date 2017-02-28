@@ -56,7 +56,7 @@ class App extends Component {
         />
 
         <footer clear="both">
-          <p>&copy;2016 <a href="http://evanchiu.com">Evan Chiu</a> | Fork me on <a href="https://github.com/evanchiu/tele-js">Github</a></p>
+          <p>&copy;2017 <a href="http://evanchiu.com">Evan Chiu</a> | Fork me on <a href="https://github.com/evanchiu/tele-js">Github</a></p>
         </footer>
       </div>
     );
