@@ -10,12 +10,13 @@ A simple web app for displaying recorded television shows.
 * Make sure the directory in [tele-server.service](tele-server.service) on the `WorkingDirectory` line matches the directory where these files are checked out.
 * Run these commands to complete the installation and run the service
 
-
-    npm install
-    npm run build
-    sudo cp tele-server.service /lib/systemd/system/
-    sudo systemctl enable tele-server
-    sudo systemctl start tele-server
+```bash
+npm install
+npm run build
+sudo cp tele-server.service /lib/systemd/system/
+sudo systemctl enable tele-server
+sudo systemctl start tele-server
+```
 
 ## My Setup
 Tele is also is my name for a Windows VM set up to:
